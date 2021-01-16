@@ -20,3 +20,11 @@ cp /tmp/nrpe_agent_source_install/nrpe.cfg /usr/local/nagios/etc/nrpe.cfg
 cp /tmp/nrpe_agent_source_install/check_memory /usr/local/nagios/libexec/check_memory
 service nrpe start
 netstat -tupln | grep 5666
+
+#Install the Nagios Plugins
+export VER="2.3.3"
+curl -SL https://github.com/nagios-plugins/nagios-plugins/releases/download/release-$VER/nagios-plugins-$VER.tar.gz | tar -xzf -
+cd nagios-plugins-$VER
+   ./configure --with-nagios-user=nagios --with-nagios-group=nagios
+   make
+   sudo make install
