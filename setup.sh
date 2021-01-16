@@ -17,7 +17,7 @@ make install-config
 make install-init
 update-rc.d nrpe defaults
 cp /tmp/nrpe_agent_source_install/nrpe.cfg /usr/local/nagios/etc/nrpe.cfg
-cp /tmp/nrpe_agent_source_install/check_memory /usr/local/nagios/libexec/check_memory
+cp /tmp/nrpe_agent_source_install/check_memory /usr/local/nagios/libexec/check_mem
 service nrpe start
 netstat -tupln | grep 5666
 
