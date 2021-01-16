@@ -16,3 +16,6 @@ make install-config
 make install-init
 update-rc.d nrpe defaults
 cp /tmp/nrpe-nrpe-4.0.3/nrpe.cfg /usr/local/nagios/etc/nrpe.cfg
+service nagios-nrpe-server start
+netstat -tupln | grep 5666
+
