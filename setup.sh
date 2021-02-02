@@ -23,9 +23,6 @@ update-rc.d nrpe defaults
 cp /tmp/nrpe_agent_source_install/nrpe.cfg /usr/local/nagios/etc/nrpe.cfg
 cp /tmp/nrpe_agent_source_install/check_memory /usr/local/nagios/libexec/check_mem
 systemctl daemon-reload
-service nrpe restart
-service nrpe status
-netstat -tupln | grep 5666
 
 #Install the Nagios Plugins
 export VER="2.3.3"
@@ -34,3 +31,9 @@ cd nagios-plugins-$VER
    ./configure --with-nagios-user=nagios --with-nagios-group=nagios
    make
    sudo make install
+
+service nrpe restart
+service nrpe status
+netstat -tupln | grep 5666
+
+
