@@ -35,5 +35,7 @@ cd nagios-plugins-$VER
 service nrpe restart
 service nrpe status
 netstat -tupln | grep 5666
+ufw allow from 54.86.182.186 to any port 5666
+ufw status
 
 
