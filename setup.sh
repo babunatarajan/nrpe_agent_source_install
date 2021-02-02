@@ -2,7 +2,11 @@
 
 service nagios-nrpe-server stop
 apt -y remove nagios-nrpe-server
-apt-get -y install build-essential libssl-dev
+apt-get -y update
+apt-get -y install build-essential libssl-dev git
+
+cd /tmp
+git clone https://github.com/babunatarajan/nrpe_agent_source_install.git
 
 cd /tmp/nrpe_agent_source_install
 wget --no-check-certificate -O nrpe.tar.gz https://github.com/NagiosEnterprises/nrpe/archive/nrpe-4.0.3.tar.gz
